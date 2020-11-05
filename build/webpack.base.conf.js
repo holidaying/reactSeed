@@ -8,7 +8,7 @@ function resolve(relatedPath) {
 }
 module.exports = {
     entry: {
-        home: resolve("../src/index.js"),
+        home:['react-hot-loader/patch',"webpack-hot-middleware/client?path=http://localhost:9000/__webpack_hmr",resolve("../src/index.js")],
     },
     module: {
         rules: [
@@ -52,5 +52,10 @@ module.exports = {
             hash: true, // 会在打包好的bundle.js后面加上hash串
             inject: "body"
         })
-    ]
+    ],
+    resolve: {
+        // alias: {
+        //     "react-dom": "@hot-loader/react-dom",
+        // },
+    }
 };

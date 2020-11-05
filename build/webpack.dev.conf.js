@@ -1,5 +1,4 @@
 let path = require("path")
-console.log(path)
 let devServer = require("./devserver.js")
 let common = require("./webpack.base.conf.js")
 const { merge } = require('webpack-merge');
@@ -10,13 +9,15 @@ function resolve(relatedPath) {
 }
 
 module.exports = merge(common, {
+
+    mode: "development",
     devtool: 'inline-source-map',
     devServer: devServer(resolve("../public")),
     output: {
         path: resolve('../public'),
-        filename: '[name].[hash:4].js',
+        filename: '[name].js',
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin({})
-    ]
+        new webpack.HotModuleReplacementPlugin()
+    ],
 });
