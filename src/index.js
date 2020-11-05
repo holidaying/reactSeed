@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'antd/dist/antd.css'; 
 import App from './App';
+window.React = React;
 // import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <App />,

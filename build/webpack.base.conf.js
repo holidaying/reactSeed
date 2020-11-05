@@ -8,7 +8,7 @@ function resolve(relatedPath) {
 }
 module.exports = {
     entry: {
-        home:['react-hot-loader/patch',"webpack-hot-middleware/client?path=http://localhost:9000/__webpack_hmr",resolve("../src/index.js")],
+        home:['react-hot-loader/patch',resolve("../src/index.js")],
     },
     module: {
         rules: [
