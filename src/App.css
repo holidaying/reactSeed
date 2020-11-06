@@ -28,7 +28,18 @@
 .App-link {
   color: #61dafb;
 }
-
+.form_login{
+  top:50%;
+  bottom:0px;
+  max-width: 400px;
+  position: absolute;
+  height: 100px;
+  background: #eee;
+  padding: 20px;
+  box-shadow: 2px 2px 2px #eee;
+  margin-top:-30px;
+  right:20px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

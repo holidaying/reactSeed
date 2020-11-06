@@ -7,13 +7,16 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <Input placeholder="Basic usage" />
-      <Input placeholder="Basic usage" />
+     
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p>
           {/* Edit <code>src/App.js</code> and save to reload. */}
         </p>
       </header>
+      <div className="form_login">
+      <Input placeholder="请输入用户名" />
+      <Input placeholder="请输入密码" />
+      </div>
     </div>
   );
 }
