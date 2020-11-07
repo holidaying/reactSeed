@@ -8,7 +8,7 @@ function resolve(relatedPath) {
 }
 module.exports = {
     entry: {
-        home:['react-hot-loader/patch',resolve("../src/index.js")],
+        home: ['react-hot-loader/patch', resolve("../src/index.js")],
     },
     module: {
         rules: [
@@ -18,6 +18,10 @@ module.exports = {
                     'style-loader',
                     'css-loader'
                 ]
+            },
+            {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             },
             //babel处理js
             {
@@ -57,5 +61,9 @@ module.exports = {
         // alias: {
         //     "react-dom": "@hot-loader/react-dom",
         // },
+        alias:{
+            src:resolve("../src"),
+            public:resolve("../public")
+        }
     }
 };

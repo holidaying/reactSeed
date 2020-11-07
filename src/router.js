@@ -27,9 +27,9 @@ import App from "./App"
 //   </Router>
 // )
 export default () => (
-    <Router basename="/calendar">
+    <Router >
         <Switch>
-            <Route exact path='/tt' component={App} />
+            <Route exact path='/' component={App} />
             <Route path="/login">
                 <Login/>
             </Route>

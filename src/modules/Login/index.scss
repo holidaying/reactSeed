@@ -1,0 +1,42 @@
+$bgcolor: #2d97f9;
+.login-container {
+  background: $bgcolor;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  overflow: hidden;
+  .video-bg {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+  }
+  .form-login {
+    margin: auto;
+    bottom: 0px;
+    top: 0px;
+    position: absolute;
+    height: 200px;
+    max-width: 400px;
+    border-radius: 4px;
+    float: right;
+    background: #eee;
+    padding: 20px;
+    box-shadow: 2px 2px 2px #eee;
+    right: 20px;
+    input {
+      margin: 10px auto;
+    }
+    .footer {
+      margin-top: 10px;
+      text-align: center;
+      button{
+          width:100%
+      }
+    }
+  }
+}
