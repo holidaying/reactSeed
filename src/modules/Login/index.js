@@ -18,7 +18,7 @@ export default  class Login extends React.Component {
     // this.setState({value: event.target.value});
   }
   handleSubmit(){
-    login({name:this.state.name,password:this.state.password}).then(res=>{
+    login({username:this.state.username,password:this.state.password}).then(res=>{
         debugger 
         alert(res);
     })

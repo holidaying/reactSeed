@@ -1,7 +1,7 @@
 import React from 'react'
-import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import Login from "./modules/Login"
-import App from "./App"
+import Index from "./modules/Index"
 // import * as base from '@pages/base' // 基础
 // import * as sysSet from '@pages/set' // 设置中心-系统设置
 // import * as menu from '@pages/menu' // 菜单
@@ -29,10 +29,20 @@ import App from "./App"
 export default () => (
     <Router >
         <Switch>
-            <Route exact path='/' component={App} />
-            <Route path="/login">
-                <Login/>
+            <Route exact path='/login' component={Login} />
+            <Route path="/">
+                <div>
+                    33333
+                </div>
+                <Switch>
+                    <Route path="/index">
+                        <Index />
+                    </Route>
+                    <Route path="/main">
+                        <p>888</p>
+                    </Route>
+                </Switch>
             </Route>
         </Switch>
-    </Router>
+    </Router >
 )
