@@ -19,8 +19,7 @@ export default  class Login extends React.Component {
   }
   handleSubmit(){
     login({username:this.state.username,password:this.state.password}).then(res=>{
-        debugger 
-        alert(res);
+      this.props.history.push('/index')
     })
   }
   render() {

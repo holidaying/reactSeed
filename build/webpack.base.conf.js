@@ -31,6 +31,18 @@ module.exports = {
                     'babel-loader'
                 ]
             },
+
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192
+                        }
+                    }
+                ]
+            },
             {
                 test: /\.svg$/,
                 use: [
@@ -61,9 +73,9 @@ module.exports = {
         // alias: {
         //     "react-dom": "@hot-loader/react-dom",
         // },
-        alias:{
-            src:resolve("../src"),
-            public:resolve("../public")
+        alias: {
+            src: resolve("../src"),
+            public: resolve("../public")
         }
     }
 };

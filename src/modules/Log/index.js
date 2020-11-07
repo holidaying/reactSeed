@@ -14,9 +14,9 @@ export default class Index extends React.Component {
     render() {
         return (
             <Layout>
-                <Header>首页</Header>
-                <Content>首页</Content>
-                <Footer>首页</Footer>
+                <Header>日志</Header>
+                <Content>日志</Content>
+                <Footer>日志</Footer>
             </Layout>);
     }
 }
