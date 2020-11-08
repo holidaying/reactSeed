@@ -25,7 +25,7 @@ export default  class Login extends React.Component {
   }
   render() {
     return (<div className="login-container">
-      <video src="/video.mp4" muted autoPlay loop="loop" className="video-bg"></video>
+      <video src={require("public/video.mp4").default} muted autoPlay loop="loop" className="video-bg"></video>
       <div className="form-login">
         <Input placeholder="请输入用户名" name="username" value={this.state.username} type="text" onChange={(e)=>this.handleChange(e)} />
         <Input placeholder="请输入密码"  name="password" value={this.state.password} type ="password" onChange={(e)=>this.handleChange(e)} />

@@ -28,10 +28,21 @@ module.exports = {
             },
 
             {
-                test: /\.(png|jpg|gif)$/,
+                test: /\.(png|jpg|gif|mp4)$/,
                 use: [
                     {
                         loader: 'url-loader',
+                        options: {
+                            limit: 8192
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(mp4)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
                         options: {
                             limit: 8192
                         }
