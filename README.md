@@ -1,12 +1,63 @@
 ## 脚本配置
-
+```
+"build": "webpack --config ./build/webpack.build.conf.js && node ./build/distserver.js",
+    "build:pc": "webpack --config ./build/webpack.build.conf.js && node ./build/distserver.js & gulp copy --sysname=pc",
+    "build:web": "webpack --config ./build/webpack.build.conf.js && node ./build/distserver.js & gulp copy  --sysname=web",
+    "dev:pc": "webpack-dev-server  --hot --open 'google chrome' --progress --config ./build/webpack.dev.conf.js --sysname=pc",
+    "dev:web": "webpack-dev-server  --hot --open 'google chrome' --progress --config ./build/webpack.dev.conf.js --sysname=web",
+```
 ## 路由
 >react-router
-
+```
+<Router >
+        <Switch>
+            <Route exact path='/login' component={Login} />
+            <Route path="/">
+                <div className="app-container">
+                    <NavApp></NavApp>
+                    <div className="main-container">
+                        <Switch>
+                            <Route path="/index">
+                                <Index />
+                            </Route>
+                            <Route path="/log">
+                                <Log/>
+                            </Route>
+                            <Route path="/devops">
+                                <Devops/>
+                            </Route>
+                        </Switch>
+                    </div>
+                </div>
+            </Route>
+        </Switch>
+    </Router >
+```
 ## 请求
-
+```
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.post('/education/api/login', function (req, res) {
+    // 接收请求参数
+    console.log(req.body.username);
+    res.cookie("oath", Token.createToken(req.body.username, Date.now()), { maxAge: 900000, httpOnly: true });
+    res.send({ "data": true })
+})
+```
 ## 事件、循环
-
+```
+handleSubmit(){
+    login({username:this.state.username,password:this.state.password}).then(res=>{
+      this.props.history.push('/index')
+    })
+  }
+  render() {
+    return (<div className="login-container">
+      <video src="/video.mp4" muted autoPlay loop="loop" className="video-bg"></video>
+      <div className="form-login">
+        <Input placeholder="请输入用户名" name="username" value={this.state.username} type="text" onChange={(e)=>this.handleChange(e)} />
+        <Input placeholder="请输入密码"  name="password" value={this.state.password} type ="password" onChange={(e)=>this.handleChange(e)} />
+        <div className="footer">
+```
 ## 父子消息传递
 
 >
@@ -39,8 +90,44 @@ npm i --save-dev react-loadable
 （1）Web 应用是一个状态机，视图与状态是一一对应的。
 （2）所有的状态，保存在一个对象里面。
 ## 多页面
+```
+   new HtmlWebpackPlugin({
+                title: '主页面',
+                filename: 'index.html',
+                template: resolve('../src/template/index.html'),
+                hash: true, // 会在打包好的bundle.js后面加上hash串
+                inject: "body",
+                chunks:["home"]
+            }),
+            new HtmlWebpackPlugin({
+                title: '跳转页面',
+                filename: 'page.html',
+                template: resolve('../src/template/page.html'),
+                hash: true, // 会在打包好的bundle.js后面加上hash串
+                inject: "body",
+                chunks: ["page"]
+            })
+        ],
+```
+## 依赖动态加载和独立部署
 
 ## 微前端
+>乾坤/sigle-spa
+前端微服务化解决方案1 - 思考
+
+前端微服务化解决方案2 - Single-SPA
+
+前端微服务化解决方案3 - 模块加载器
+
+前端微服务化解决方案4 - 消息总线
+
+前端微服务化解决方案5 - 路由分发
+
+前端微服务化解决方案6 - 构建与部署
+
+前端微服务化解决方案7 - 静态数据共享
+
+前端微服务化解决方案8 - 二次构建
 
 ## docker
 >
