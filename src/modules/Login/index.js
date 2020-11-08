@@ -18,9 +18,10 @@ export default  class Login extends React.Component {
     // this.setState({value: event.target.value});
   }
   handleSubmit(){
-    login({username:this.state.username,password:this.state.password}).then(res=>{
-      this.props.history.push('/index')
-    })
+    // login({username:this.state.username,password:this.state.password}).then(res=>{
+    //   this.props.history.push('/index')
+    // })
+    this.props.history.push('/index')
   }
   render() {
     return (<div className="login-container">

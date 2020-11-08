@@ -17,8 +17,8 @@
   "scripts": {
     "start": "webpack-dev-server  --hot --open 'google chrome' --progress --config ./build/webpack.dev.conf.js",
     "build": "webpack --config ./build/webpack.build.conf.js && node ./build/distserver.js",
-    "build:pc": "webpack --config ./build/webpack.build.conf.js && node ./build/distserver.js & gulp copy --sysname=pc",
-    "build:web": "webpack --config ./build/webpack.build.conf.js && node ./build/distserver.js & gulp copy  --sysname=web",
+    "build:pc": "webpack --config ./build/webpack.build.conf.js &&  gulp copy --sysname=pc",
+    "build:web": "webpack --config ./build/webpack.build.conf.js &&  gulp copy  --sysname=web",
     "dev:pc": "webpack-dev-server  --hot --open 'google chrome' --progress --config ./build/webpack.dev.conf.js --sysname=pc",
     "dev:web": "webpack-dev-server  --hot --open 'google chrome' --progress --config ./build/webpack.dev.conf.js --sysname=web",
     "test": "react-scripts test",
