@@ -43,3 +43,24 @@ npm i --save-dev react-loadable
 ## 微前端
 
 ## docker
+>
+#可访问 https://hub.docker.com/_/nginx 查看python镜像源
+FROM nginx:1.15.2-alpine
+#将当前目录下dist文件夹所有文件都拷贝到image文件中指定目录
+COPY ../dist /
+COPY default.conf /etc/nginx/conf.d/default.conf
+# 开放容器的80端口，允许外部访问这个端口
+EXPOSE 80
+
+>构建镜像
+```
+docker image build -t front .
+
+```
+
+>构建容器
+
+```
+docker run -p 82:82 --name front -d front 
+
+```
