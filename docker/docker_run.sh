@@ -1,0 +1,1 @@
+docker image build -t front . && docker run -p 82:82 --name front -d front 

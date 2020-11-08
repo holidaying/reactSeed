@@ -2,17 +2,14 @@
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 let common = require("./webpack.base.conf.js")
 const {merge} = require('webpack-merge');
-
-let path = require("path")
-function resolve(relatedPath) {
-    return path.join(__dirname, relatedPath)
-}
+const appsConfig  = require("./appsConfig");
+const sysName = (process.argv.slice(-1)[0]).split("=")[1]||"pc";
+// let path = require("path")
 module.exports = merge(common,{
-    output: {
-        path: resolve('../dist'),
-        filename: '[name].js',
-    },
+    entry:appsConfig[sysName].entry,
+    output: appsConfig[sysName].dist,
     plugins: [
         new CleanWebpackPlugin(),
+        ...appsConfig[sysName].plugins
     ]
 });
