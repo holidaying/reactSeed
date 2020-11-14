@@ -10,6 +10,11 @@ module.exports = function (path) {
               target: "http://localhost:5000",
               pathRewrite: {"^/gataway" : ""},
               secure:false
+            },
+            "/remote": {
+              target: "http://localhost:7000",
+              // pathRewrite: {"^/gataway" : ""},
+              secure:false
             }
           }
     }

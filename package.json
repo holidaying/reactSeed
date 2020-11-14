@@ -22,6 +22,7 @@
     "build:web": "webpack --config ./build/webpack.build.conf.js &&  gulp copy  --sysname=web",
     "dev:pc": "webpack-dev-server  --hot --open 'google chrome' --progress --config ./build/webpack.dev.conf.js --sysname=pc",
     "dev:web": "webpack-dev-server  --hot --open 'google chrome' --progress --config ./build/webpack.dev.conf.js --sysname=web",
+    "build:modules": "webpack --config ./build/webpack.module.build.js",
     "test": "react-scripts test",
     "server": "node express/index.js",
     "eject": "react-scripts eject"
